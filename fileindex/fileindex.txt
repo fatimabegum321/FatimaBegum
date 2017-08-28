@@ -30,14 +30,16 @@ function uniqueWordsWithCount($blobText) {
 	   }
 	   
   }
-  array_multisort($wordArray, SORT_DESC, $wordArray);
-  $i=0;
-  foreach($wordArray as $key => $val){
+  //Sorting word array based on highest count of word
+	array_multisort($wordArray, SORT_DESC, $wordArray);
+	
+	//Displaying Top 10 Records 
+	$i=0;
+	foreach($wordArray as $key => $val){
 		if($key != '' && $i<10){
-			echo $key." val ". $val."<br>";
+			echo "Word   <b>". $key."</b> Count <b>". $val."</b><br>";
 			$i++;
 		}
     }  
 }
-
 ?>
