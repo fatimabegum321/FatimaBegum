@@ -1,6 +1,11 @@
 <?php 
+
+//Retrieving values from form
+if(!isset($_POST['fileName']))die('Error: No Filename');
+
+$fileName = isset($_POST['fileName']) ?$_POST['fileName'] : 'test.php';
 //Open file
-$myfile = fopen("test.php", "r") or die("Unable to open file!");
+$myfile = fopen($fileName, "r") or die("Unable to open file!");
 //Read the contents of file
 $fileData =  fread($myfile,filesize("test.php"));
 //Close File
